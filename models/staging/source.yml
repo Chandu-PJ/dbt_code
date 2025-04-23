@@ -4,5 +4,16 @@ sources:
       database: "{{('db')}}"
       schema: staging
       tables: 
-       - name: raw_customerdata
-       - name: raw_orders
+        - name: raw_customerdata
+        - name: emp
+        - name: raw_orders
+          columns:
+            - name: id
+              tests:
+                - unique
+                - not_null
+            - name: status
+              tests:
+                - accepted_values:
+                      values: ['placed', 'shipped', 'completed', 'returned', 'return_pending','ordered']
+        - name: customers
