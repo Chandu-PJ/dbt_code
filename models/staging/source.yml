@@ -6,6 +6,7 @@ sources:
       tables: 
         - name: raw_customerdata
         - name: emp
+        - name: raw_product
         - name: raw_orders
           columns:
             - name: id
