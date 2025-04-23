@@ -1,0 +1,36 @@
+version: 2
+
+
+exposures:
+
+  - name: weekly_metrics
+    label: Jay by the Week
+    type: dashboard
+    maturity: high
+    description: 
+     For more exposure about project details
+
+    depends_on:
+      - ref('final_business')
+      - ref('order_merge')
+      - ref('order_macro_data')
+      - ref('emp')
+      - ref('employees_salary')
+      - ref('order_append')
+      - ref('order_delete_insert')
+      - ref('order_insert_overwrite')
+      - ref('orders')
+      - ref('customers')
+      - ref('snap_customers_timestamp')
+      - ref('snap_customers_timestamp2')
+      - ref('snap_orders_check')
+      - test('order_amount_test')
+      - source('datafeed_shared_schema','raw_orders')
+      - source('datafeed_shared_schema','raw_customerdata')
+      - source('datafeed_shared_schema','raw_product')
+      - source('datafeed_shared_schema','customers')
+      - source('datafeed_shared_schema','emp')
+  
+    owner:
+      name:  Jay
+      email: chandu.pj96@gmail.com
